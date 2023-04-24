@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>Click the button to create a diamond:</p>
+
+<button onclick="createDiamond()">Create Diamond</button>
+
+<p id="diamond"></p>
+
+<script>
+function createDiamond() {
+  var diamond = "";
+  var size = 5;
+  for (var i = 1; i <= size; i++) {
+    for (var j = 1; j <= size - i; j++) {
+      diamond += "&nbsp;&nbsp;";
+    }
+    for (var k = 1; k <= 2 * i - 1; k++) {
+      diamond += "*";
+    }
+    diamond += "<br>";
+  }
+  for (var i = size - 1; i >= 1; i--) {
+    for (var j = 1; j <= size - i; j++) {
+      diamond += "&nbsp;&nbsp;";
+    }
+    for (var k = 1; k <= 2 * i - 1; k++) {
+      diamond += "*";
+    }
+    diamond += "<br>";
+  }
+  document.getElementById("diamond").innerHTML = diamond;
+}
+</script>
+
+</body>
+</html>
